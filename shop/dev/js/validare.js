@@ -1,13 +1,16 @@
 
-// document.addEventListener("DOMContentLoaded", function(){
-//     var myScrollSpy = new bootstrap.ScrollSpy(document.body, {
-//         target: "#myNavbar"
-//     })
-// });
+(function () {
+    'use strict'
+    const forms = document.querySelectorAll('.requires-validation')
+    Array.from(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
 
-$(document).ready(function () {
-    $("body").scrollspy({
-        target: "#myNavbar"
-    })
-
-});
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()

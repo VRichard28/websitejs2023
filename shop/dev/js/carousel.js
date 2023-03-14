@@ -7,6 +7,3 @@ var carousel = new bootstrap.Carousel(myCarousel, {
   touch: true,
   ride: false
 });
-carousel.on('slide.bs.carousel', function () {
-  alert(1);
-})
